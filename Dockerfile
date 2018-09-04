@@ -18,7 +18,7 @@ RUN groupadd -g 1000 elasticsearch &&
 WORKDIR /usr/share/elasticsearch
 
 COPY --chown=1000:0 ./elasticsearch /usr/share/elasticsearch
-COPY --chown=1000:0 ./docker-entrypoint.sh in /usr/local/bin/docker-entrypoint.sh
+COPY --chown=1000:0 ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chgrp 0 /usr/local/bin/docker-entrypoint.sh &&
     chmod g=u /etc/passwd &&
     chmod 0775 /usr/local/bin/docker-entrypoint.sh
